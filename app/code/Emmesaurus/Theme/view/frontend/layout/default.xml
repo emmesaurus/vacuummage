@@ -1,0 +1,20 @@
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+   <head>
+    <title>Hello World</title>
+    <!--<css src="Emmesaurus_Theme::css/social.css"/>-->
+</head>
+   <body>
+ <referenceContainer name="header.panel">
+	    <container name="header.social" as="header_social" label="Header Social"  htmlTag="div" htmlClass="header-social" after="header.links">
+
+            <block class="Emmesaurus\Theme\Block\Social" template="Emmesaurus_Theme::default/social.phtml"/>
+        </container>
+	        </referenceContainer>
+	       <referenceContainer name="footer">
+	    <container name="footer.contact" as="footer_contact" label="Footer Contact"  htmlTag="ul" htmlClass="footer-contact widget block block-static-block" before="-">
+
+            <block class="Emmesaurus\Theme\Block\Contact" template="Emmesaurus_Theme::default/contact.phtml"/>
+        </container>
+	        </referenceContainer>
+    </body>
+</page>

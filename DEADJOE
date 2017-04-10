@@ -1,0 +1,22 @@
+
+*** These modified files were found in JOE when it aborted on Mon Apr 10 09:23:41 2017
+*** JOE was aborted by UNIX signal 15
+
+*** File '(Unnamed)'
+:wq
+wq
+ZZ
+x
+
+*** File '(Unnamed)'
+/home/vacuummage/vacuummage/public/.git/COMMIT_EDITMSG
+/home/vacuummage/vacuummage/public/.git/COMMIT_EDITMSG
+
+*** These modified files were found in JOE when it aborted on Mon Apr 10 10:16:56 2017
+*** JOE was aborted by UNIX signal 1
+
+*** File '(Unnamed)'
+/home/vacuummage/.gitconfig
+/home/vacuummage/vacuummage/public/.git/COMMIT_EDITMSG
+/home/vacuummage/vacuummage/public/.git/COMMIT_EDITMSG
+/home/vacuummage/vacuummage/public/.git/COMMIT_EDITMSG

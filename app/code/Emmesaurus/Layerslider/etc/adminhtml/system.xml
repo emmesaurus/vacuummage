@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+
+    <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+    xsi:noNamespaceSchemaLocation="../../../Backend/etc/system_file.xsd">
+        <system>
+            <tab id="layerslider_tab" translate="label" sortOrder="1">
+                <label>Layerslider Config</label>
+            </tab>
+            <section id="Layerslider_image" translate="label" sortOrder="1" showInDefault="1" 
+    showInWebsite="1" showInStore="1">
+                <label>Layerslider Images</label>
+                <tab>layerslider_tab</tab>
+                <resource>Emmesaurus_Layerslider::system_config</resource>
+                <group id="layersider_group" translate="label" type="text" sortOrder="1" showInDefault="1" 
+    showInWebsite="1" showInStore="1">
+                    <label>Layerslider Uploader</label>
+                    
+
+<field id="upload_image_id" translate="label comment" type="image" sortOrder="50" showInDefault="1" showInWebsite="1" showInStore="1">
+               <label>Select Image</label>
+               <backend_model>Emmesaurus\Layerslider\Model\Config\Backend\Image</backend_model>
+               <base_url type="media" scope_info="1">layerslider</base_url>
+           </field>
+
+                 </group>   
+            </section>
+        </system>
+    </config>
