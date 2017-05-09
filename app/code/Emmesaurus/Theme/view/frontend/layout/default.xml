@@ -37,6 +37,11 @@
 </container>
         </container>
 	       </referenceContainer>
+	       <referenceContainer name="header.panel">
+		       <container name="header.address" as="header_address" label="Header Address" htmlTag="div" htmlClass="header-address">
+			       <block class="Emmesaurus\Theme\Block\HeaderAddress" template="Emmesaurus_Theme::default/header-address.phtml"/>
+		       </container>
+	       </referenceContainer>
 
     </body>
 </page>
