@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" layout="1column" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+	<head>
+        <title>Call For Price</title>
+		<script src="Magecomp_Callforprice::js/jquery.fancybox.js"/>
+		<script src="https://www.google.com/recaptcha/api.js" src_type="url"></script>
+		<css src="Magecomp_Callforprice::css/jquery.fancybox.css"/>
+	</head>
+	<body>
+		<referenceContainer name="content">
+			<block class="Magecomp\Callforprice\Block\Callforprice" name="callforprice_form" template="Magecomp_Callforprice::callforprice.phtml"/>
+		</referenceContainer>
+ 	</body>
+</page>

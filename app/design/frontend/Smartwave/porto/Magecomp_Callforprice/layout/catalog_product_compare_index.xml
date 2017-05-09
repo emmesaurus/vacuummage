@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © 2016 Magento. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+-->
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" layout="1column" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+	<head>
+        <script src="Magecomp_Callforprice::js/jquery.fancybox.js"/>
+		<script src="https://www.google.com/recaptcha/api.js" src_type="url"></script>
+		<css src="Magecomp_Callforprice::css/jquery.fancybox.css"/>
+	</head>
+	<body>
+		<referenceBlock name="catalog.compare.list">
+    		<action method="setTemplate" ifconfig="callforprice/main/enable">
+        		<argument name="template" xsi:type="string">Magecomp_Callforprice::catalog/product/compare/list.phtml</argument>
+    		</action>
+		</referenceBlock>
+		<referenceContainer name="before.body.end">
+			<block class="Magecomp\Callforprice\Block\Callforprice" after="-" name="callforprice_form" template="Magecomp_Callforprice::callforprice.phtml"/>          
+        </referenceContainer>
+    </body>
+</page>

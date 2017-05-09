@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+    <menu>
+        <add id="Magecomp_Callforprice::callforprice" module="Magecomp_Callforprice" resource="Magecomp_Callforprice::callforprice" sortOrder="50" title="Magecomp Call For Price"/>
+
+        <add id="Magecomp_Callforprice::callforprice_callforprice" title="Call For Price Inquiries" module="Magecomp_Callforprice" sortOrder="10" action="callforprice/callforprice/index" resource="Magecomp_Callforprice::callforprice_callforprice" parent="Magecomp_Callforprice::callforprice"/>
+		
+		<add id="Magecomp_Callforprice::config_callforprice" title="Configuration" module="Magecomp_Callforprice" sortOrder="20" parent="Magecomp_Callforprice::callforprice" action="adminhtml/system_config/edit/section/callforprice" resource="Magecomp_Callforprice::config_callforprice"/>
+		
+	</menu>
+</config>

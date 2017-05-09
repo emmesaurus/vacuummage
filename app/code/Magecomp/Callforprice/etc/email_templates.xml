@@ -1,0 +1,5 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Email:etc/email_templates.xsd">
+    <template id="callforprice_adminemail_email_template" label="Call For Price Admin Email Template" file="callforprice_admin_email.html" type="html" module="Magecomp_Callforprice" area="adminhtml"/>
+	<template id="callforprice_autoreply_email_template" label="Call For Price Auto Reply Email Template" file="callforprice_auto_reply.html" type="html" module="Magecomp_Callforprice" area="adminhtml"/>
+</config>

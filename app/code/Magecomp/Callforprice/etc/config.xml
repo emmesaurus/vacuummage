@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../Magento/Store/etc/config.xsd">
+	<default>
+		<callforprice>
+			<main>
+				<enable>0</enable>
+			</main>
+           	<general>           
+                <buttontext>Call For Price</buttontext>
+                <formtitle>Call For Price</formtitle>
+                <applyon>0</applyon>
+				<customer_groups>0</customer_groups>
+				<successmsg>Thanks for contacting us with your comments and questions. We\'ll respond to you very soon.</successmsg>
+				<errormsg>We can\'t process your request right now. Sorry, that\'s all we know</errormsg>
+				<storeviews>0</storeviews>
+			</general>
+			<adminemail>
+				<recipient_email>
+                    <![CDATA[hello@example.com]]>
+                </recipient_email>
+                <sender_email_identity>custom2</sender_email_identity>
+                <email_template>callforprice_adminemail_email_template</email_template>			
+			</adminemail>
+			<autoreply>
+				<enable>0</enable>
+				<sender_email_identity>custom2</sender_email_identity>
+				<email_template>callforprice_autoreply_email_template</email_template>
+			</autoreply>
+        </callforprice>
+    </default>
+</config>

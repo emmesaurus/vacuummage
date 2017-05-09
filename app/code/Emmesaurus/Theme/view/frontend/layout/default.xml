@@ -4,17 +4,39 @@
     <!--<css src="Emmesaurus_Theme::css/social.css"/>-->
 </head>
    <body>
- <referenceContainer name="header.panel">
-	    <container name="header.social" as="header_social" label="Header Social"  htmlTag="div" htmlClass="header-social" after="header.links">
+	        <move element="footer_links" destination="footer-support"/>
+	        <move element="navigation.sections" destination="header.panel.wrapper" after="header.panel" />
 
-            <block class="Emmesaurus\Theme\Block\Social" template="Emmesaurus_Theme::default/social.phtml"/>
-        </container>
-	        </referenceContainer>
+	        <!--<move element="jumbotron" destination="top.container" before="navigation.sections" /> -->
+	       <!-- <referenceBlock name="copyright" remove="true"/> -->
+	        <referenceBlock name="report.bugs" remove="true"/>
+	        <referenceBlock name="form.subscribe" remove="true"/>	        
 	       <referenceContainer name="footer">
-	    <container name="footer.contact" as="footer_contact" label="Footer Contact"  htmlTag="ul" htmlClass="footer-contact widget block block-static-block" before="-">
+	    <container name="footer.blocks" as="footer_blocks" label="Footer Blocks"  htmlTag="div" htmlClass="footer-blocks row" before="-">
+            <container name="footer-about" label="Footer About" htmlTag="div" htmlClass="large-3 columns">
+	            <block class="Emmesaurus\Theme\Block\FooterAbout" template="Emmesaurus_Theme::default/footer-about.phtml"/>
+            </container>
+                        <container name="footer-social" label="Footer Social" htmlTag="div" htmlClass="footer-social large-3 columns">
+	                        <block class="Emmesaurus\Theme\Block\FooterSocial" template="Emmesaurus_Theme::default/footer-social.phtml"/>
+            </container>
 
-            <block class="Emmesaurus\Theme\Block\Contact" template="Emmesaurus_Theme::default/contact.phtml"/>
+            <container name="footer-support" label="Footer Support" htmlTag="div" htmlClass="footer-supporrt large-3 columns">
+	                        <block class="Emmesaurus\Theme\Block\FooterSupport" template="Emmesaurus_Theme::default/footer-support.phtml"/>
+            </container>
+                                    <container name="footer-contact" label="Footer Contact" htmlTag="div" htmlClass="footer-contact large-3 columns">
+	                                    <block class="Emmesaurus\Theme\Block\FooterContact" template="Emmesaurus_Theme::default/footer-contact.phtml"/>
+            </container>
+			            </container>
+	       </referenceContainer>
+	       <referenceContainer name="footer">
+		       <container name="footer.bottom" as="footer_bottom" label="Footer Bottom" htmlTag="div" htmlClass="footer-bottom row" after="footer_blocks">
+<container name="footer-credibility" label="Footer Credibility" htmlTag="div" htmlClass="footer-credibility large-6 columns">
+	                                    <block class="Emmesaurus\Theme\Block\FooterCredibility" template="Emmesaurus_Theme::default/footer-credibility.phtml"/>
+</container>
+<container name="footer-payment" label="Footer payment" htmlTag="div" htmlClass="footer-payment large-6 columns">
+</container>
         </container>
-	        </referenceContainer>
+	       </referenceContainer>
+
     </body>
 </page>

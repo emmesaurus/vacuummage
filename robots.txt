@@ -1,2 +1,3 @@
 Sitemap: https://discountvacuums.com/sitemap/sitemap.xml
 Sitemap: https://discountvacuums.com/vacuummage/public/sitemap/sitemap.xml
+Sitemap: http://vacuumcentral.net/vcdev/public/sitemap/sitemap.xml

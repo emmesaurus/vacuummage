@@ -1,0 +1,37 @@
+<!--@subject Call For Price Contact Inquiry - {{trans data.product_name}}@-->
+<!--@vars
+{"var data.name":"Sender Name",
+"var data.email":"Sender Email",
+"var data.telephone":"Sender Telephone",
+"var data.country":"Country Name",
+"var data.comment":"Comment",
+"var data.product_name":"Product Name"}
+@-->
+{{template config_path="design/email/header_template"}}
+<table bgcolor="#FFFFFF" cellspacing="0" cellpadding="10" border="0">
+    <tr>
+        <th align="left">Name</th>
+        <td>{{var data.name}}</td>
+    </tr>
+    <tr>
+        <th align="left">Email</th>
+        <td>{{var data.email}}</td>
+    </tr>
+    <tr>
+        <th align="left">Phone Number</th>
+        <td>{{var data.telephone}}</td>
+    </tr>
+    <tr>
+        <th align="left">Country</th>
+        <td>{{var data.country}}</td>
+    </tr>
+    <tr>
+        <th align="left">Product Name</th>
+        <td>{{var data.product_name}}</td>
+    </tr>
+    <tr>
+        <th align="left">Comment</th>
+        <td>{{var data.comment}}</td>
+    </tr>    
+</table>
+{{template config_path="design/email/footer_template"}}

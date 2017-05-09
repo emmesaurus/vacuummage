@@ -1,0 +1,147 @@
+<script type="text/javascript">
+
+	jQuery(document).ready(function()
+	{
+		jQuery('.fancybox').fancybox();
+		
+		jQuery("#callforprice_btn").click(function(e)
+		{
+			if (jQuery('#callforprice-form').valid())
+			{
+				var url = '<?php echo $this->getUrl('callforprice/index/post')?>'; 
+				jQuery.ajax({
+					type: "POST",
+				   	url: url,
+				   	data: jQuery("#callforprice-form").serializeArray(), // serializes the form's elements.
+				   	success: function(data)
+				   	{
+					   	if(data == 'sucess')
+					   	{
+							jQuery("#callforprice-form")[0].reset();
+							jQuery('#call-for-price-form').hide();
+							jQuery('#call-for-price-message-repatcha-error').hide();
+						   	jQuery('#call-for-price-message-success').show();
+						}
+					   	if(data == 'error')
+					   	{
+							jQuery("#callforprice-form")[0].reset();
+						   	jQuery('#call-for-price-form').hide();
+							jQuery('#call-for-price-message-repatcha-error').hide();
+						   	jQuery('#call-for-price-message-error').show();
+					   	}
+						if(data == 'wrong')
+						{
+							//jQuery('#call-for-price-form').hide();
+							jQuery('#call-for-price-message-repatcha-error').show();							
+						}
+				   	}
+				});
+				e.preventDefault(); // avoid to execute the actual submit of the form.
+			}
+		});
+	});
+	function setProductData(id)
+	{
+		if(id)
+		{
+			jQuery('#cproduct_id').val(id);
+			jQuery("#callforprice-form")[0].reset();
+			jQuery('#call-for-price-form').show();
+			jQuery('#call-for-price-message-success').hide();
+			jQuery('#call-for-price-message-error').hide();
+			jQuery('#call-for-price-message-repatcha-error').hide();
+			jQuery('#call_fancybox').click();
+		}
+	}
+</script>
+<?php $_callhelper = $this->helper('Magecomp\Callforprice\Helper\Data');?>
+
+
+<a class="fancybox" id="call_fancybox" href="#inline1"></a>
+<div id="inline1" style="display: none;">
+	<div id="call-for-price-message-success" style="display:none">
+        <div class="message-success success message" data-ui-id="message-success">
+            <div><?php echo $_callhelper->getSucessMessage();?></div>
+        </div>
+    </div>
+    <div id="call-for-price-message-error" style="display:none">
+        <div class="message-error error message" data-ui-id="message-error">
+            <div><?php echo $_callhelper->getErrorMessage();?></div>
+        </div>
+    </div>
+    <div id="call-for-price-message-repatcha-error" style="display:none">
+        <div class="message-error error message" data-ui-id="message-error">
+            <div><?php echo __('Please Enter Valid Captcha.');?></div>
+        </div>
+    </div>
+    <div id="call-for-price-form">
+        <form class="form contact"
+              action="<?php /* @escapeNotVerified */ //echo $block->getFormAction(); ?>"
+              id="callforprice-form"
+              method="post"
+              data-hasrequired="<?php /* @escapeNotVerified */ echo __('* Required Fields') ?>"
+              data-mage-init='{"validation":{}}'>
+              <input type="hidden" name="cproduct_id" id="cproduct_id" value="0" />
+            <fieldset class="fieldset">
+                <legend class="legend"><span><?php /* @escapeNotVerified */ echo $_callhelper->getFormtitle(); ?></span></legend><br />
+                <div class="field name required">
+                    <label class="label" for="name"><span><?php /* @escapeNotVerified */ echo __('Name') ?></span></label>
+                    <div class="control">
+                        <input name="name" id="name" title="<?php /* @escapeNotVerified */ echo __('Name') ?>" class="input-text" type="text" data-validate="{required:true}"/>
+                    </div>
+                </div>
+                <div class="field email required">
+                    <label class="label" for="email"><span><?php /* @escapeNotVerified */ echo __('Email') ?></span></label>
+                    <div class="control">
+                        <input name="email" id="email" title="<?php /* @escapeNotVerified */ echo __('Email') ?>" class="input-text" type="email" data-validate="{required:true, 'validate-email':true}"/>
+                    </div>
+                </div>
+                <div class="field country required">
+                    <label class="label" for="country"><span><?php /* @escapeNotVerified */ echo __('Country') ?></span></label>
+                    <div class="control">
+                        <select name="country" id="country" data-validate="{required:true, 'validate-select':true}">
+                        <option value=""><?php echo __('Please Select')?></option>
+                        <?php
+                            $countries = $block->getCountries();
+                            foreach ( $countries as $countryKey => $country )
+                            {
+                                if($country['value'] != '')
+                                {?>
+                                <option value="<?php echo $country['value'];?>"><?php echo $country['label'];?></option>
+                            <?php }
+                            }
+                        ?>
+                        </select>
+                    </div>
+                </div>
+                <div class="field telephone">
+                    <label class="label" for="telephone"><span><?php /* @escapeNotVerified */ echo __('Phone Number') ?></span></label>
+                    <div class="control">
+                        <input name="telephone" id="telephone" title="<?php /* @escapeNotVerified */ echo __('Phone Number') ?>" value="" class="input-text" type="text" />
+                    </div>
+                </div>
+                <div class="field comment required">
+                    <label class="label" for="comment"><span><?php /* @escapeNotVerified */ echo __('What’s on your mind?') ?></span></label>
+                    <div class="control">
+                        <textarea name="comment" id="comment" title="<?php /* @escapeNotVerified */ echo __('What’s on your mind?') ?>" class="input-text" cols="5" rows="3" data-validate="{required:true}"></textarea>
+                    </div>
+                </div>
+                <?php if($_callhelper->isGoogleRecaptcha()): ?>
+                <div class="field comment required">
+                    <div class="control">
+                        <div class="g-recaptcha" data-sitekey="<?php echo $block->getSiteKey(); ?>"></div>
+                    </div>
+                </div>
+                <?php endif;?>
+            </fieldset>
+            <div class="actions-toolbar">
+                <div class="primary">
+                    <input type="hidden" name="hideit" id="hideit" value="" />
+                    <button type="submit" title="<?php /* @escapeNotVerified */ echo __('Submit') ?>" class="action submit primary" id="callforprice_btn">
+                        <span><?php /* @escapeNotVerified */ echo __('Submit') ?></span>
+                    </button>
+                </div>
+            </div>
+        </form>
+	</div>
+</div>

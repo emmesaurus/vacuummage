@@ -6,34 +6,33 @@
  */
 ?>
 	<div class="jumbotron-wrapper">
-	<div id="layerslider" class="responsive" style="width:1280px;height:375px;">
-	<div class="ls-slide" data-ls="bgsize:cover;bgposition:50% 50%;overflow:true;kenburnsscale:1.2;parallaxevent:scroll;parallaxdistance:15;duration: 7000;">
-			<img width="1200" height="375" src="<?php echo $this->getViewFileUrl('Emmesaurus_Layerslider::images/beam60thslide.jpg'); ?>" class="ls-bg" alt="landing-intro-bg">
-<p style="letter-spacing:0.2em;overflow:hidden;font-size:75px;color:#fff;font-weight:700;top:30%;left:50%;" class="ls-l" data-ls="offsetyin:-60;durationin:1300;delayin:900;easingin:easeOutExpo;offsetxout:-80;durationout:400;parallax:true;parallaxlevel:5;">SALE EVENT!</p>
-            <p style="top:50%;left:50%;" class="ls-l" data-ls="offsetyin:-60;durationin:1300;delayin:900;easingin:easeOutExpo;offsetxout:-80;durationout:400;parallax:true;parallaxlevel:5;"><a href="https://discountvacuums.com/pub/media/wysiwyg/assets/pdf/beam60flyer.pdf" style="line-height: 2.2rem; padding:14px 17px; font-size: 1.8rem;" class="action submit primary" title="">See Details</a></p>
+	<div id="layerslider" class="fullwidth" style="width:1440px;height:500px;">
+	<div class="ls-slide" data-ls="bgsize:cover;bgposition:50% 50%;overflow:true;kenburnsscale:1.2;duration: 7000;">
+			<img width="1440" height="500" src="<?php echo $this->getViewFileUrl('Emmesaurus_Layerslider::images/mielec3comfortparquetslide.jpg'); ?>" class="ls-bg" alt="landing-intro-bg">
+			<img width="1440" height="500" src="<?php echo $this->getViewFileUrl('Emmesaurus_Layerslider::images/mielec2comfortparquetslidetex.png'); ?>" class="ls-l" alt="Nellies Logo" style="top:50%;left:50%;" data-ls="offsetxin:200;offsetyin:-100;rotatein:20;offsetxout:-80;durationout:400;position:fixed;">
 			</div>
-	<div class="ls-slide" data-ls="bgsize:cover;bgposition:50% 50%;overflow:true;kenburnsscale:1.2;parallaxevent:scroll;parallaxdistance:15;duration: 7000;">
-			<img width="1280" height="375" src="<?php echo $this->getViewFileUrl('Emmesaurus_Layerslider::images/miele10yearslide.jpg'); ?>" class="ls-bg" alt="landing-intro-bg">
-      
-			</div>			
-		<div class="ls-slide" data-ls="bgsize:cover;bgposition:50% 50%;overflow:true;kenburnsscale:1.2;parallaxevent:scroll;parallaxdistance:15;duration: 7000;">
-			<img width="1200" height="375" src="<?php echo $this->getViewFileUrl('Emmesaurus_Layerslider::images/nelliesslide.jpg'); ?>" class="ls-bg" alt="landing-intro-bg">
-			<img width="409" height="135" src="<?php echo $this->getViewFileUrl('Emmesaurus_Layerslider::images/nellieslogo.png'); ?>" class="ls-l" alt="Nellies Logo" style="top:60%;left:80%;" data-ls="offsetxin:200;offsetyin:-100;rotatein:20;offsetxout:-80;durationout:400;parallax:true;parallaxlevel:7;position:fixed;">
-			
-				  </div>
-
-
-	</div>
+			<div class="ls-slide" data-ls="bgsize:cover;bgposition:50% 50%;overflow:true;kenburnsscale:1.2;duration: 7000;">
+			<img width="1440" height="500" src="<?php echo $this->getViewFileUrl('Emmesaurus_Layerslider::images/beam60thsaleslidebg.jpg'); ?>" class="ls-bg" alt="landing-intro-bg">
+			<img width="1440" height="500" src="<?php echo $this->getViewFileUrl('Emmesaurus_Layerslider::images/beam60thsaletext.png'); ?>" class="ls-l" alt="Nellies Logo" style="top:50%;left:50%;" data-ls="offsetxin:200;offsetyin:-100;rotatein:20;offsetxout:-80;durationout:400;position:fixed;">
+			</div>
+						<div class="ls-slide" data-ls="bgsize:auto;bgposition:0px 0px;overflow:true;kenburnsscale:1.2;duration: 7000;bgcolor:#dcdbdf;">
+			<img width="987" height="500" src="<?php echo $this->getViewFileUrl('Emmesaurus_Layerslider::images/miele10yearslidebg.jpg'); ?>" class="ls-bg" alt="landing-intro-bg">
+			<img width="453" height="500" src="<?php echo $this->getViewFileUrl('Emmesaurus_Layerslider::images/miele10yearslidetext.png'); ?>" class="ls-l" alt="Nellies Logo" style="top:50%;left:100%;" data-ls="offsetxin:200;offsetyin:-100;rotatein:20;offsetxout:-80;durationout:400;position:fixed;">
+			</div>
+				<div class="ls-slide" data-ls="bgsize:auto;bgposition:50% 50%;overflow:true;kenburnsscale:1.2;duration: 7000;bgcolor:#fff;">
+			<img width="1280" height="375" src="<?php echo $this->getViewFileUrl('Emmesaurus_Layerslider::images/retraflexslide.jpg'); ?>" class="ls-bg" alt="landing-intro-bg">
+			</div>
+		</div>
 </div>
 		<!-- LayerSlider end -->
 <script type="text/javascript">
     require(['jquery','greensock','layerslidertransitions','layersliderjquery'],function($, jQuery){
         $(window).load(function() {
         $("#layerslider").layerSlider({
-	        type: 'responsive',
-			height: 375,
+	        type: 'fullwidth',
+	        fitScreenWidth: true,
+			height: 500,
 			maxRatio: 1,
-			parallaxScrollReverse: true,
 			optimizeForMobile: true,
 			skinsPath: '<?php echo $this->getViewFileUrl('Emmesaurus_Layerslider::images/'); ?>/skins/'
 		});

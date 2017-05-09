@@ -79,17 +79,17 @@
 	}
 
 	.ls-background-videos {
-		z-index: 31;
+		z-index: 1;
 	}
 
 	.ls-bg-video-overlay {
-		z-index: 32;
+		z-index: 21;
 		background-repeat: repeat;
 		background-position: center center;
 	}
 
 	.ls-slide-backgrounds {
-		z-index: 33;
+		z-index: 2;
 	}
 
 	.ls-layers {
@@ -261,6 +261,10 @@
 
 		.ls-link {
 			display: none;
+		}
+
+		.ls-link-on-top {
+			z-index: 999999 !important;
 		}
 
 		.ls-link, .ls-wrapper > a > * {
@@ -661,7 +665,7 @@
 		position: absolute;
 		left: 0;
 		top: 0;
-		z-index: 34;
+		z-index: 3;
 	}
 
 	.ls-slide-transition-wrapper,

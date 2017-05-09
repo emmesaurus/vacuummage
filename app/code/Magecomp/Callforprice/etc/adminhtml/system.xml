@@ -1,0 +1,119 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+    <system>
+        <tab id="magecomp" translate="label" sortOrder="100">
+            <label><![CDATA[<img src="https://www.magecomp.com/media/images/magecomp--extension.png" alt="MAGECOMP" height="25" style="vertical-align:middle;"/>]]></label>
+        </tab>
+        <section id="callforprice" translate="label" type="text" sortOrder="1" showInDefault="1" showInWebsite="1" showInStore="1">
+            <class>separator-top</class>
+            <label>Call For Price</label>
+            <tab>magecomp</tab>
+            <resource>Magecomp_Callforprice::config_callforprice</resource>
+            <group id="main" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>Configuration</label>
+				<field id="enable" translate="label comment" type="select" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Enable</label>
+					<source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+				</field>
+            </group>
+			<group id="general" translate="label" type="text" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>Call For Price Options</label>
+				<field id="buttontext" translate="label" type="text" sortOrder="1" showInDefault="1" showInWebsite="1" showInStore="1">
+            		<label>Button Text</label>
+				</field>
+				<!--<field id="calluson" translate="label" type="text" sortOrder="2" showInDefault="1" showInWebsite="1" showInStore="1">
+            		<label>Call Us on</label>
+				</field>-->
+				<field id="formtitle" translate="label" type="textarea" sortOrder="3" showInDefault="1" showInWebsite="1" showInStore="1">
+            		<label>Popup Form Heading Title</label>
+				</field>
+				<field id="successmsg" translate="label" type="textarea" sortOrder="4" showInDefault="1" showInWebsite="1" showInStore="1">
+            		<label>Popup Form Success Message</label>
+				</field>
+				<field id="errormsg" translate="label" type="textarea" sortOrder="5" showInDefault="1" showInWebsite="1" showInStore="1">
+            		<label>Popup Form Error Message</label>
+				</field>
+				<field id="enablecustommsg" translate="label comment" type="select" sortOrder="7" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Enable custom message instead of price</label>
+					<source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+				</field>
+				<field id="custommessage" translate="label" type="text" sortOrder="8" showInDefault="1" showInWebsite="1" showInStore="1">
+            		<label>Custom message</label>
+					<validate>required-entry</validate>
+					<depends><field id="enablecustommsg">1</field></depends>
+				</field>
+				<field id="applyon" translate="label" type="select" sortOrder="9" showInDefault="1" showInWebsite="1" showInStore="1">
+            		<label>Call For Price Apply On</label>
+            		<source_model>Magecomp\Callforprice\Model\Applyon</source_model>
+				</field>
+				<field id="customer_groups" translate="label" type="multiselect" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+            		<label>Customer Groups</label>
+            		<source_model>Magecomp\Callforprice\Model\Customergroups</source_model>
+					<validate>validate-select</validate>
+					<comment>Call for price option will be available to these customer groups only. Select all for All customers</comment>
+            	</field>
+				<field id="storeviews" translate="label" type="multiselect" sortOrder="11" showInDefault="1" showInWebsite="1" showInStore="1">
+            		<label>Store Views</label>
+					<validate>validate-select</validate>
+            		<source_model>Magecomp\Callforprice\Model\Stores</source_model>
+					<comment>Call for price option will be available to these Store Views only. Select all for All Store Views.</comment>
+            	</field>
+            </group>
+			<group id="adminemail" translate="label" type="text" sortOrder="30" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>Admin Email Settings</label>
+                <field id="recipient_email" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Send Emails To</label>
+                    <validate>required-entry validate-email</validate>
+                </field>
+                <field id="sender_email_identity" translate="label" type="select" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Email Sender</label>
+                    <source_model>Magento\Config\Model\Config\Source\Email\Identity</source_model>
+                </field>
+                <field id="email_template" translate="label comment" type="select" sortOrder="30" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Email Template</label>
+                    <comment>Email template chosen based on theme fallback when "Default" option is selected.</comment>
+                    <source_model>Magento\Config\Model\Config\Source\Email\Template</source_model>
+                </field>
+            </group>
+			<group id="autoreply" translate="label" type="text" sortOrder="40" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>Auto Reply Email Settings</label>
+				<field id="enable" translate="label comment" type="select" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Enable</label>
+					<source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+				</field>
+                <field id="sender_email_identity" translate="label" type="select" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Email Sender</label>
+                    <source_model>Magento\Config\Model\Config\Source\Email\Identity</source_model>
+					<depends><field id="enable">1</field></depends>
+                </field>
+                <field id="email_template" translate="label comment" type="select" sortOrder="30" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Email Template</label>
+                    <comment>Email template chosen based on theme fallback when "Default" option is selected.</comment>
+                    <source_model>Magento\Config\Model\Config\Source\Email\Template</source_model>
+					<depends><field id="enable">1</field></depends>
+                </field>
+            </group>
+			<group id="googlerecaptcha" translate="label" type="text" sortOrder="50" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>Google Recaptcha Configuration</label>
+                <field id="enable" type="select" showInDefault="1" sortOrder="0" showInWebsite="1" showInStore="1">
+                    <label>Enable</label>
+					<source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+               </field>
+			    <field id="sitekey" type="text" showInDefault="1" sortOrder="1" showInWebsite="1" showInStore="1">
+                    <label>Site Key</label>
+					<validate>required-entry</validate>
+					 <depends>
+                        <field id="enable">1</field>
+                    </depends>
+               </field>
+			    <field id="secretkey" type="text" showInDefault="1" sortOrder="2" showInWebsite="1" showInStore="1">
+                    <label>Secret Key</label>
+					<validate>required-entry</validate>
+					 <depends>
+                        <field id="enable">1</field>
+                    </depends>
+               </field>
+		 	</group>
+		</section>
+    </system>
+</config>

@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" layout="admin-2columns-left"
+      xsi:noNamespaceSchemaLocation="../../../../../../../lib/internal/Magento/Framework/View/Layout/etc/page_configuration.xsd">
+    <referenceContainer name="left">
+        <block class="Magecomp\Callforprice\Block\Adminhtml\Callforprice\Edit\Tabs" name="callforprice_callforprice_edit_tabs"/>
+    </referenceContainer>
+    <referenceContainer name="content">
+        <block class="Magecomp\Callforprice\Block\Adminhtml\Callforprice\Edit" name="callforprice_callforprice_edit_edit"/>
+    </referenceContainer>
+</page>

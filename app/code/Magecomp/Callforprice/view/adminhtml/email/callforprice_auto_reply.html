@@ -1,0 +1,17 @@
+<!--@subject Call For Price Contact Inquiry - {{var data.product_name}}@-->
+<!--@vars
+{"var data.name":"Sender Name",
+"var data.email":"Sender Email",
+"var data.telephone":"Sender Telephone",
+"var data.country":"Country Name",
+"var data.comment":"Comment",
+"var data.product_name":"Product Name"}
+@-->
+{{template config_path="design/email/header_template"}}
+<table bgcolor="#FFFFFF" cellspacing="0" cellpadding="10" border="0">
+    <tr>
+        Hi {{var data.name}},
+        <p>Thanks for contacting us. We will check your details and get back soon with reply.</p>
+    </tr>
+</table>
+{{template config_path="design/email/footer_template"}}
