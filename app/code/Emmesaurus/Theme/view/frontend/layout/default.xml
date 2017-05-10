@@ -34,6 +34,7 @@
 	                                    <block class="Emmesaurus\Theme\Block\FooterCredibility" template="Emmesaurus_Theme::default/footer-credibility.phtml"/>
 </container>
 <container name="footer-payment" label="Footer payment" htmlTag="div" htmlClass="footer-payment large-6 columns">
+	<block class="Emmesaurus\Theme\Block\FooterPayment" template="Emmesaurus_Theme::default/footer-payment.phtml"/>
 </container>
         </container>
 	       </referenceContainer>
